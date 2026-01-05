@@ -114,14 +114,18 @@ body {
     }
   }
 
-  &:has(button:focus) {
+  &:has(button:focus),
+  &:has(button:hover) {
     svg>circle {
       transform: scale(0.25) !important;
       transition: transform .5s ease-in-out;
     }
 
+    .icon-dots,
+    .icon-password-recovery,
+    .icon-password,
     .icon-user {
-      opacity: 0;
+      opacity: 0 !important;
     }
 
     .icon-door {
@@ -147,7 +151,15 @@ body {
     }
   }
 
-  &:has(#username:focus) {
+  &:has(#username:focus),
+  &:has(#username:hover) {
+
+    .icon-door,
+    .icon-dots,
+    .icon-password,
+    .icon-password-recovery  {
+      opacity: 0 !important;
+    }
 
     .icon-user {
 
@@ -158,13 +170,21 @@ body {
     }
   }
 
-  &:has(#password:focus) {
+  &:has(#password:focus),
+  &:has(#password:hover) {
     --percentage-body: 0;
     --percentage-head: 0;
     --percentage-shirt: 0;
 
+    .icon-dots,
+    .icon-password-recovery,
+    .icon-password,
+    .icon-user {
+      opacity: 0 !important;
+    }
+
     .icon-dots {
-      opacity: 1;
+      opacity: 1 !important;
       transition: opacity .25s ease-in-out;
 
       circle {
@@ -224,18 +244,22 @@ body {
     }
   }
 
-  &:has(#password_recovery:focus) {
+  &:has(#password_recovery:focus),
+  &:has(#password_recovery:hover) {
 
     svg>circle {
       transition-delay: 0 !important;
     }
 
+    .icon-door,
+    .icon-dots,
+    .icon-password,
     .icon-user {
       opacity: 0;
     }
 
     .icon-password-recovery {
-      opacity: 1;
+      opacity: 1 !important;
 
       text {
         transition: .25s ease-in-out;
@@ -283,14 +307,18 @@ body {
     --opacity_a: 0;
   }
 
-  &:has(#show_password:focus) {
+  &:has(#show_password:focus),
+  &:has(#show_password:hover) {
 
+    .icon-door,
+    .icon-dots,
+    .icon-password-recovery,
     .icon-user {
       opacity: 0 !important;
     }
 
     .icon-password {
-      opacity: 1;
+      opacity: 1 !important;
 
       text {
         transition: .25s ease-in-out;
